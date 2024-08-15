@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+    <meta charset="utf-8" />
+    <title>{% block title %} {% endblock title %}</title>
+    <style media="screen">
+        html {
+            background: #fefefa;
+        }
+
+        * {
+            font-family: Helvetica, Arial, sans-serif;
+        }
+
+        body {
+            margin: auto;
+            max-width: 800px;
+        }
+
+        header {
+            padding: 30px;
+            border-bottom: 1px solid #000;
+            display: flex;
+        }
+
+        header>img {
+            margin-right: 20px;
+            border-radius: 20px;
+        }
+
+        #main {
+            margin: 50px;
+        }
+
+        footer {
+            padding: 30px;
+            border-top: 1px solid #000;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        #server {
+            font-family: monospace;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <img src="https://i.imgur.com/co1apjK.gif" height="80" alt="Logo" />
+        <h1>Emrio</h1>
+    </header>
+    <div id="main">
+        {% block content %} {% endblock content %}
+    </div>
+</body>
+
+<footer>
+    <a href="https://status.emrio.fr/">System Status</a>
+
+    <span id="server">
+        {{ hostname }}
+    </span>
+</footer>
+
+</html>
